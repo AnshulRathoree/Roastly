@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Roastly Coffee – Expanded Landing Page</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Mulish', sans-serif;
+      background-color: #fefcfb;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+    .brand {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #333;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+    .brand-icon {
+      font-size: 1.5rem;
+      margin-right: 0.5rem;
+      color: #a55f3b; 
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #a55f3b;
+    }
+    .nav-right .login-btn {
+      background-color: #a55f3b;
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .nav-right .login-btn:hover {
+      background-color: #8a4f30;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      min-height: 70vh;
+      background: linear-gradient(135deg, #f7e3d1 40%, #fefcfb 100%);
+    }
+    .hero-text {
+      flex: 1;
+      margin-right: 2rem;
+    }
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #4d2f1e;
+    }
+    .hero-text p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+    .hero-text .cta-btn {
+      background-color: #a55f3b;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+    .hero-text .cta-btn:hover {
+      background-color: #8a4f30;
+    }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image img {
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+   
+    .featured {
+      padding: 2rem;
+      text-align: center;
+    }
+    .featured h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #4d2f1e;
+    }
+    .coffee-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .coffee-card {
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 6px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+    .coffee-card:hover {
+      transform: translateY(-4px);
+    }
+    .coffee-card img {
+      width: 100%;
+      border-radius: 4px;
+      margin-bottom: 0.75rem;
+    }
+    .coffee-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #4d2f1e;
+    }
+    .coffee-card .price {
+      font-weight: 700;
+      color: #a55f3b;
+      margin-bottom: 0.5rem;
+    }
+    .coffee-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+
+    .taste-profiles {
+      padding: 2rem;
+      background-color: #fff;
+      text-align: center;
+    }
+    .taste-profiles h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #4d2f1e;
+    }
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .profile-card {
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 6px;
+      padding: 1rem;
+      background-color: #fcfcfc;
+      text-align: left;
+      transition: box-shadow 0.2s ease;
+    }
+    .profile-card:hover {
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .profile-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #4d2f1e;
+    }
+    .profile-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .newsletter {
+      padding: 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, #fefcfb 40%, #f7e3d1 100%);
+    }
+    .newsletter h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #4d2f1e;
+    }
+    .newsletter p {
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .newsletter-form {
+      display: inline-flex;
+      gap: 0.5rem;
+    }
+    .newsletter-form input[type="email"] {
+      padding: 0.5rem;
+      border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 4px;
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .newsletter-form button {
+      background-color: #a55f3b;
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .newsletter-form button:hover {
+      background-color: #8a4f30;
+    }
+
+    
+    .testimonials {
+      padding: 2rem;
+      text-align: center;
+      background-color: #fff;
+    }
+    .testimonials h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #4d2f1e;
+    }
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .testimonial-card {
+      background-color: #fcfcfc;
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: 6px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: left;
+      transition: transform 0.2s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-4px);
+    }
+    .testimonial-card .author {
+      font-weight: 700;
+      margin-top: 0.5rem;
+    }
+    .testimonial-card .stars {
+      color: #ffa500;
+      margin-bottom: 0.5rem;
+    }
+    .testimonial-card p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    footer {
+      background-color: #fff;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    .footer-social {
+      margin: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .footer-social a {
+      color: #a55f3b;
+      font-size: 1.2rem;
+      transition: color 0.2s ease;
+    }
+    .footer-social a:hover {
+      color: #8a4f30;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 0.5rem;
+      }
+      .hero {
+        flex-direction: column;
+      }
+      .hero-text {
+        margin: 0 0 1rem 0;
+        text-align: center;
+      }
+      .hero-image {
+        margin-top: 1rem;
+      }
+      .coffee-grid,
+      .profile-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+      .newsletter-form {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="#" class="brand">
+
+        <i class="fas fa-coffee brand-icon"></i>
+        Roastly
+      </a>
+      <div class="nav-links">
+        <a href="#"><i class="fas fa-home"></i> Home</a>
+        <a href="#"><i class="fas fa-shopping-cart"></i> Shop</a>
+        <a href="#"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <button class="login-btn">
+        <i class="fas fa-user"></i> Login
+      </button>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Savor the Perfect Brew</h1>
+      <p>At Roastly, we believe in delivering only the finest, sustainably sourced coffee beans from around the world. Indulge in our rich aromas and experience coffee like never before.</p>
+      <button class="cta-btn">Explore Our Coffees</button>
+    </div>
+    <div class="hero-image">
+ 
+      <img src="https://cdn.leonardo.ai/users/bacceb59-a436-4585-9cd2-0486605b849e/generations/0ee4ba56-aa4a-49e1-bc73-a1deaa6de24b/Leonardo_Phoenix_10_The_coffee_bag_design_is_a_modern_minimali_3.jpg" alt="Coffee Bag" />
+    </div>
+  </section>
+
+
+  <section class="featured">
+    <h2>Featured Coffees</h2>
+    <div class="coffee-grid">
+
+      <div class="coffee-card">
+        <img src="https://cdn.leonardo.ai/users/bacceb59-a436-4585-9cd2-0486605b849e/generations/4928874c-a55e-4e83-940d-b35e87cb3845/Leonardo_Phoenix_10_The_coffee_bag_design_embodies_a_modern_an_0.jpg" alt="Coffee 1" />
+        <h3>Midnight Roast</h3>
+        <p class="price">$14.99 / lb</p>
+        <p>Deep, dark, and bold, our Midnight Roast is perfect for those who enjoy a strong, intense flavor with hints of chocolate.</p>
+      </div>
+     
+      <div class="coffee-card">
+        <img src="https://cdn.leonardo.ai/users/bacceb59-a436-4585-9cd2-0486605b849e/generations/f03eb8a0-f7df-4c46-8464-0da3730217f0/Leonardo_Phoenix_10_The_coffee_bag_design_for_Roastly_featurin_3.jpg" alt="Coffee 2" />
+        <h3>Morning Bliss</h3>
+        <p class="price">$12.99 / lb</p>
+        <p>A bright and lively roast to kickstart your day. Experience subtle notes of citrus and a smooth, balanced finish.</p>
+      </div>
+     
+      <div class="coffee-card">
+        <img src="https://ideogram.ai/assets/image/lossless/response/Ls-I_k7QSsi34SjMyjxKrg" />
+        <h3>Golden Latte Blend</h3>
+        <p class="price">$16.49 / lb</p>
+        <p>A creamy, sweet blend that pairs perfectly with steamed milk. Expect a rich, caramelized aroma and mellow aftertaste.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="taste-profiles">
+    <h2>Taste Profiles</h2>
+    <div class="profile-grid">
+     
+      <div class="profile-card">
+        <h4>Chocolate & Nutty</h4>
+        <p>These roasts bring out a smooth cocoa-like aroma, often paired with hints of almond or hazelnut. Perfect for cozy evenings.</p>
+      </div>
+     
+      <div class="profile-card">
+        <h4>Fruity & Bright</h4>
+        <p>Light roasts that deliver a lively, citrus-forward flavor. Ideal for those who prefer a crisp, refreshing cup.</p>
+      </div>
+
+      <div class="profile-card">
+        <h4>Earthy & Spicy</h4>
+        <p>Full-bodied coffees featuring subtle notes of spice and warm earthiness, often reminiscent of a sweet, peppery finish.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <h2>Join Our Newsletter</h2>
+    <p>Get updates on new roasts, exclusive offers, and coffee tips directly to your inbox.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Your Email Address" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonial-grid">
+  
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <p>“Roastly's Morning Bliss literally makes my day! I can't start without it.”</p>
+        <div class="author">— Alex M.</div>
+      </div>
+  
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i>
+        </div>
+        <p>“I love how they source ethically. The flavors are top-notch, and the packaging is so classy.”</p>
+        <div class="author">— Jenna K.</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="stars">
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i>
+        </div>
+        <p>“Their Golden Latte Blend is divine. It's like a warm hug in a cup.”</p>
+        <div class="author">— Samuel R.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Roastly Coffee. Crafted with passion & dedication.</p>
+    <div class="footer-social">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p>All rights reserved.</p>
+  </footer>
+</body>
+</html>
